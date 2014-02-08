@@ -1,6 +1,6 @@
 # Node Site Checker
 
-A node script for checking the state of a list of websites and sending an email or jabber/xmpp message if one or multiple websites are unreachable.
+A node script for checking the state of a list of websites and sending an email or jabber/xmpp message if one or multiple websites are unreachable or returning error codes.
 
 ## Use
 
@@ -92,18 +92,18 @@ siteChecker.createMessage = function(sitesOffline){
 }
 ```
 
-The notifications are only send when there are websites offline.
+The notifications are only sent when there are websites offline.
 
-The jabber/xmpp notifications are done with node-xmpp. The email notifications are done with node-mailer.
+The jabber/xmpp notifications are sent with node-xmpp. The email notifications are sent with node-mailer.
 
-If you ommit the .smtpTransportConfig() option for emailMessage, the mail() function of node-mailer is used. If you ommit the .subject() option, the default one is used, which is identical to the example.
+If you ommit the emailMessage.smtpTransportConfig() setting, the mail() function of node-mailer is used. If you ommit the emailMessage.subject() option, the default subject one is used.
 
 ### Request timeout
 
-The request timeouts for servers that are not responding is default set to 5 seconds. Set it manually like so:
+The request timeouts for servers that are not responding is by default set to 5 seconds. Set it manually like so:
 
 ```javascript
-// set a to seconds timeout for unreachable servers
+// set a two seconds timeout for unreachable servers
 siteChecker.setRequestTimeout(2000);
 ```
 
