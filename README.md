@@ -100,11 +100,11 @@ If you ommit the emailMessage.smtpTransportConfig() setting, the mail() function
 
 ### Request timeout
 
-The request timeouts for servers that are not responding is by default set to 5 seconds. Set it manually like so:
+The request timeouts for servers that are not responding is by default set to 20 seconds. Set it manually like so:
 
 ```javascript
 // set a two seconds timeout for unreachable servers
-siteChecker.setRequestTimeout(2000);
+siteChecker.setRequestTimeout(5000);
 ```
 
 ### CRON

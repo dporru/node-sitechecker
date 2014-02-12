@@ -5,7 +5,7 @@ var http = require('http'),
 	_ = require('underscore'),
 	url = require('url'),
 	Q = require("q"),
-	requestTimeout = 5000;
+	requestTimeout = 20000;
 
 // Load the jabbermessage and emailmessage modules
 // and make them available through this module.
