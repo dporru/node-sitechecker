@@ -92,6 +92,11 @@ module.exports = function(){
 				
 				deferred.resolve(result);
 			});
+			
+			client.addListener('error', function(error){
+				deferred.reject(error);
+			});
+			
 		}else{
 			deferred.resolve(result);
 		}
