@@ -98,7 +98,7 @@ The jabber/xmpp notifications are sent with node-xmpp. The email notifications a
 
 If you ommit the emailMessage.smtpTransportConfig() setting, the mail() function of node-mailer is used. If you ommit the emailMessage.subject() option, the default subject one is used.
 
-If for some reason you don't want you're notifications to wait for each other, you can use the folliwing code. You need the [Q-library](https://github.com/kriskowal/q) for this.
+If for some reason you don't want you're notifications to wait for each other, you can use the following code. You need the [Q-library](https://github.com/kriskowal/q) for this.
 ```javascript
 var Q = require("q");
 
