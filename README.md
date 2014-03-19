@@ -98,6 +98,23 @@ The jabber/xmpp notifications are sent with node-xmpp. The email notifications a
 
 If you ommit the emailMessage.smtpTransportConfig() setting, the mail() function of node-mailer is used. If you ommit the emailMessage.subject() option, the default subject one is used.
 
+If for some reason you don't want you're notifications to wait for each other, you can use the folliwing code. You need the [Q-library](https://github.com/kriskowal/q) for this.
+```javascript
+var Q = require("q");
+
+// you're configuration code
+
+siteChecker.check(sitesToCheck)
+	.then(function(result){
+		Q.allSettled([
+			jabberMessage.send(result),
+			emailMessage.send(result)
+		]).then(function(){
+			process.exit();
+		});
+	});
+```
+
 ### Request timeout
 
 The request timeouts for servers that are not responding is by default set to 20 seconds. Set it manually like so:
